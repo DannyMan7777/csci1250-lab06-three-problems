@@ -8,6 +8,10 @@
  *              practices decisions and one of the four loops.
  */
 
+//Variables
+
+double numericalGrade;
+
 //The Menu
 
 System.Console.WriteLine("WELCOME TO LAB 06\n");
@@ -21,24 +25,59 @@ System.Console.WriteLine("5. Quit\n");
 System.Console.WriteLine("Please select a program (1-5).");
 
 int userInput = Convert.ToInt32(Console.ReadLine());
-System.Console.WriteLine();
 
 if (userInput < 1 || userInput > 5)
 {
-    System.Console.WriteLine("INVALID INPUT: Please enter a number 1-5.\n");
+    System.Console.WriteLine("INVALID INPUT: Please enter a number 1-5.");
 }
 
 if (userInput == 1 || userInput == 4)
 {
-    System.Console.WriteLine("The Grade Checker\n");
+    System.Console.WriteLine("=== Exercise 1: The Grade Checker ===");
+    System.Console.WriteLine("Please enter a numerical grade.");
+    numericalGrade = Convert.ToDouble(Console.ReadLine());
+
+    /* The Grade Checker throws an error message and asks for another input until it gets a valid numerical grade. This is
+    * condition-controlled, and a while() is used, NOT a do...while(). The error loop needs to check the first user input BEFORE
+    * triggering so it can skip itself altogether if the first user input is a valid grade.
+    */
+    while(numericalGrade < 0 || numericalGrade > 100)
+    {
+        System.Console.WriteLine("Numerical grade must be between 0 and 100.");
+        System.Console.WriteLine("Please enter a numerical grade.");
+        numericalGrade = Convert.ToDouble(Console.ReadLine());
+    }
+
+    if (numericalGrade >= 90)
+    {
+        System.Console.WriteLine($"{numericalGrade} earns an A.");
+    }
+    else if (numericalGrade >= 80)
+    {
+    System.Console.WriteLine($"{numericalGrade} earns a B.");
+    }
+    else if (numericalGrade >= 70)
+    {
+        System.Console.WriteLine($"{numericalGrade} earns a C.");
+    }
+    else if (numericalGrade >= 60)
+    {
+        System.Console.WriteLine($"{numericalGrade} earns a D.");
+    }
+    else
+    {
+        System.Console.WriteLine($"{numericalGrade} earns an F.");
+    }
+    System.Console.WriteLine();
+
 }
 if (userInput == 2 || userInput == 4)
 {
-    System.Console.WriteLine("The Dice Table\n");
+    System.Console.WriteLine("=== Exercise 2: The Dice Table ===\n");
 }
 if (userInput == 3 || userInput == 4)
 {
-    System.Console.WriteLine("The Score Report\n");
+    System.Console.WriteLine("=== Exercise 3: The Score Report ===\n");
 }
 
 System.Console.WriteLine("Goodbye.");
