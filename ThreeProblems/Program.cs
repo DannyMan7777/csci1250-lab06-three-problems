@@ -207,6 +207,10 @@ if (userInput == SCORE_REPORT || userInput == ALL_THREE)
 
     double[] scores = new double[SCORE_QUANTITY];
 
+    /* Array assembly is a count-based process. Assignment is by position, so we need a loop that can iterate on integers
+     * (positions) in a manner we as the programmer can control. This is a job for the for() loop, specifically the
+     * for(int i = 0; i < variable; i++) loop. foreach() is more practical for READING from an array (more on this later).
+     */
     for (int i = 0; i < scores.Length; i++)
     {
         if (i == 0)
@@ -249,6 +253,10 @@ if (userInput == SCORE_REPORT || userInput == ALL_THREE)
     int passingScoreQuantity = 0;
     int scoreCount = 1;
         
+    /* Again, we are dealing in arrays and need a count-controlled loop. Here, we read out an entire array, and foreach() is
+     * built spectacularly for this. foreach() iterates on EVERY member of a list. All we have to do is just point it at the
+     * array and let it do its magic, making it more efficient than the for().
+     */
     foreach (double score in scores)
     {
         System.Console.WriteLine($"Score {scoreCount++}: {score}");
