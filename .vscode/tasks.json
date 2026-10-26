@@ -1,0 +1,36 @@
+/* Gemini was used to create all the content in this Test file. Gemini was also consulted in the creation of inputs.txt,
+ * inputs2.txt, and all modifications made to keybindings.json.
+ */
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Test Console App",
+            "type": "shell",
+            "command": "Get-Content inputs.txt | dotnet run --project ThreeProblems",
+            "problemMatcher": [],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "clear": true
+            }
+        },
+        {
+            "label": "Test Scenario 2",
+            "type": "shell",
+            "command": "Get-Content inputs2.txt | dotnet run --project ThreeProblems",
+            "problemMatcher": [],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "clear": true
+            }
+        }
+    ]
+}
