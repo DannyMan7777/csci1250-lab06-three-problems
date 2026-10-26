@@ -66,6 +66,9 @@ const int SCORE_QUANTITY = 5;
 
 System.Console.WriteLine("WELCOME TO CSCI-1250 Lab 06\n");
 
+
+//A do...while() loop is employed so the menu runs once, then repeats as long as the user does not select 5 (quit the menu).
+do{
 System.Console.WriteLine(" ====== MENU ======");
 System.Console.WriteLine("1. The Grade Checker");
 System.Console.WriteLine("2. The Dice Table");
@@ -265,5 +268,7 @@ if (userInput == SCORE_REPORT || userInput == ALL_THREE)
     System.Console.WriteLine($"Highest: {scoreHighest}");
     System.Console.WriteLine($"Passing: {passingScoreQuantity} of {scores.Length}\n");
 }
+
+} while(userInput != QUIT_MENU);
 
 System.Console.WriteLine("Goodbye.\n");
